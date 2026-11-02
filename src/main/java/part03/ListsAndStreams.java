@@ -22,7 +22,7 @@ public class ListsAndStreams {
         /*
          * hint: see the documentation of List about how to create a Stream from a List.
          */
-        return null; // TODO
+        return  return strings.stream(); // TODO
     }
 
     /**
@@ -32,7 +32,7 @@ public class ListsAndStreams {
      * @return a List of the same strings
      */
     public List<String> makeList(Stream<String> stream) {
-        return null; // TODO
+        return strings.stream().limit(count); // TODO
     }
 
     /**
