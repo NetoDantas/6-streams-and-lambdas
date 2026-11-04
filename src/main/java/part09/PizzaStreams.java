@@ -29,7 +29,7 @@ public class PizzaStreams {
          * You can use the toppings() method of a Pizza to get the toppings as a
          * list of strings.
          */
-        return null; // TODO: implement this method
+        return pizzas.filter(pizza -> pizza.toppings().contains("pineapple"));
     }
 
     /**
@@ -43,7 +43,7 @@ public class PizzaStreams {
          * Like the previous method, but this time you must select the pizzas
          * that do not have "pineapple" as a topping.
          */
-        return null; // TODO: implement this method
+        return pizzas.filter(pizza -> !pizza.toppings().contains("pineapple"));
     }
 
     /**
@@ -60,7 +60,7 @@ public class PizzaStreams {
          * that have the given topping. You can assume that toppings are
          * always in lower case.
          */
-        return null; // TODO: implement this method
+        return pizzas.filter(pizza -> pizza.toppings().contains(topping));
     }
 
     /**
@@ -81,7 +81,8 @@ public class PizzaStreams {
          * of the given toppings and then use that method here. You are also allowed to
          * add new methods in the Pizza class.
          */
-        return null; // TODO: implement this method
+        return pizzas.filter(pizza -> pizza.toppings().stream()
+                .anyMatch(topping -> toppings.contains(topping)));
     }
 
     /**
@@ -100,7 +101,7 @@ public class PizzaStreams {
          * https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/stream
          * /Stream.html#sorted(java.util.Comparator)
          */
-        return null; // TODO: implement this method
+        return pizzas.sorted((pizza1, pizza2) -> Double.compare(pizza1.price(), pizza2.price()));
     }
 
     /**
@@ -118,6 +119,6 @@ public class PizzaStreams {
          * compareToIgnoreCase() method of the String class to compare the names of the
          * pizzas.
          */
-        return null; // TODO: implement this method
+        return pizzas.sorted((pizza1, pizza2) -> pizza1.name().compareToIgnoreCase(pizza2.name()));
     }
 }
