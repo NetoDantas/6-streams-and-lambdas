@@ -1,3 +1,4 @@
+
 package part06;
 
 import java.util.stream.IntStream;
@@ -20,7 +21,7 @@ public class PredicatesWithStreams {
      */
     public boolean allPositive(IntStream numbers) {
         // hint: see the `allMatch()` method
-        return false; // TODO
+        return numbers.allMatch(number -> number > 0);
     }
 
     /**
@@ -33,9 +34,9 @@ public class PredicatesWithStreams {
      */
     public int getFirstPositive(IntStream numbers) {
         /*
-         * hint: you can chain the `filter()`, `findFirst()` and `isPresent()` methods.
+         * hint: you can chain the `filter()`, `findFirst()` and `orElse(0)` methods.
          */
-        return -1; // TODO
+        return numbers.filter(number -> number > 0).findFirst().orElse(0);
     }
 
     /**
@@ -46,6 +47,6 @@ public class PredicatesWithStreams {
      */
     public boolean containsNoNulls(Stream<String> strings) {
         // hint: see the `noneMatch()` method
-        return false; // TODO
+        return strings.noneMatch(string -> string == null);
     }
 }

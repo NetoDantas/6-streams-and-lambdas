@@ -1,3 +1,4 @@
+
 package part05;
 
 import java.util.stream.IntStream;
@@ -25,7 +26,7 @@ public class FilteringStreams {
      */
     public IntStream filterEvenNumbers(IntStream numbers) {
         // hint: use the filter() method to filter out the odd numbers.
-        return null; // TODO
+        return numbers.filter(number -> number % 2 == 0);
     }
 
     /**
@@ -40,7 +41,7 @@ public class FilteringStreams {
      */
     public IntStream filterNumbersBetween(IntStream numbers, int min, int max) {
         // hint: use the filter() method to only include numbers between min and max
-        return null; // TODO
+        return numbers.filter(number -> number >= min && number <= max);
     }
 
     /**
@@ -56,7 +57,7 @@ public class FilteringStreams {
     public Stream<String> filterStringsStartingWith(Stream<String> strings, String prefix) {
         // hint: use the filter() method to only include strings that start with the
         // specified prefix.
-        return null; // TODO
+        return strings.filter(string -> string.startsWith(prefix));
     }
 
     /**
@@ -70,7 +71,7 @@ public class FilteringStreams {
      * @return a stream of strings that contain the specified substring
      */
     public Stream<String> filterIncludingSubstring(Stream<String> strings, String include) {
-        return null; // TODO
+        return strings.filter(string -> string.contains(include));
     }
 
     /**
@@ -84,6 +85,6 @@ public class FilteringStreams {
      * @return a stream of strings that do not contain the specified substring
      */
     public Stream<String> filterNotIncludingSubstring(Stream<String> strings, String exclude) {
-        return null; // TODO
+        return strings.filter(string -> !string.contains(exclude));
     }
 }

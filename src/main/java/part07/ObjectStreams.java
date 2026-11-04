@@ -1,3 +1,4 @@
+
 package part07;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class ObjectStreams {
      * @return a list of the lengths of the strings
      */
     public List<Integer> getLengths(Stream<String> strings) {
-        return null; // TODO
+        return strings.map(string -> string.length()).toList();
     }
 
     /**
@@ -37,7 +38,7 @@ public class ObjectStreams {
      */
     public List<Integer> getAges(Stream<Person> persons) {
         // Hint: This method is very similar to the getLengths() method above!
-        return null; // TODO
+        return persons.map(person -> person.age()).toList();
     }
 
     /**
@@ -52,7 +53,7 @@ public class ObjectStreams {
      * @return a list of the names
      */
     public List<String> getNames(Stream<Person> persons) {
-        return null; // TODO
+        return persons.map(person -> person.name()).toList();
     }
 
     /**
@@ -64,9 +65,10 @@ public class ObjectStreams {
      */
     public double getAverageAge(Stream<Person> persons) {
         /*
-         * Hint: you can use the `getAges()` method above to get a stream of the ages.
-         * You may remember `mapToInt()` and `average` from previous exercises.
+         * Hint: note that the `getAges()` method above returns a List, not a stream.
+         * Instead, call `mapToInt()` on the stream of persons to get a stream of the
+         * ages, and then use `average()` as in the previous exercises.
          */
-        return -1; // TODO
+        return persons.mapToInt(person -> person.age()).average().orElse(0);
     }
 }
